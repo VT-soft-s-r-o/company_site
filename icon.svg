@@ -1,0 +1,25 @@
+<svg width="50" height="50" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="blueAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="50" height="50" rx="12" fill="#0f172a"/>
+
+  <text
+    x="23.5"
+    y="35"
+    text-anchor="middle"
+    font-family="Inter, 'Segoe UI', Arial, sans-serif"
+    font-weight="700"
+    font-size="28"
+    letter-spacing="-2"
+    fill="#ffffff"
+  >
+    vt
+  </text>
+
+  <circle cx="38" cy="15" r="4" fill="url(#blueAccent)"/>
+</svg>
