@@ -12,7 +12,7 @@ const translations = {
         "hero.cta": "Get In Touch",
         
         "about.title": "About VT-soft",
-        "about.intro": "VT-soft is led by Tomáš Chabada, Ing., a senior C# developer with extensive experience in delivering enterprise-level software solutions. With a proven track record across international projects and Fortune 500 companies, we bring expertise, reliability, and innovation to every project.",
+        "about.intro": "VT-soft is led by Tomáš Chabada, Ing., a software engineer with extensive experience in delivering enterprise-level software solutions. With a proven track record across international projects and Fortune 500 companies, we bring expertise, reliability, and innovation to every project.",
         "about.attributes.title": "Professional Attributes",
         "about.attributes.reliable": "Reliable",
         "about.attributes.motivated": "Self-motivated",
@@ -23,10 +23,8 @@ const translations = {
         "about.attributes.innovative": "Innovative",
         "about.attributes.team": "Team player",
         "about.credentials.title": "Credentials",
-        "about.credentials.cert1.name": "AWS Certified Cloud Practitioner",
-        "about.credentials.cert1.date": "(March 2025)",
         "about.credentials.education1": "Master's Degree",
-        "about.credentials.education1.school": "University of Žilina, Faculty of Informatics and Management",
+        "about.credentials.education1.school": "University of Žilina, Faculty of Informatics and Management (2011)",
         "about.credentials.cert2": "Microsoft ASP.NET Core MVC",
         "about.credentials.cert3": "Microsoft SQL Performance Optimization",
         
@@ -101,7 +99,7 @@ const translations = {
         "hero.cta": "Kontaktujte nás",
         
         "about.title": "O spoločnosti VT-soft",
-        "about.intro": "VT-soft vedie Tomáš Chabada, Ing., senior C# vývojár s rozsiahlymi skúsenosťami v dodávaní softvérových riešení na podnikovej úrovni. S preukázateľnými výsledkami v medzinárodných projektoch a pre Fortune 500 spoločnosti prinášame odbornosť, spoľahlivosť a inovácie do každého projektu.",
+        "about.intro": "VT-soft vedie Tomáš Chabada, Ing., softvérový inžinier s rozsiahlymi skúsenosťami v dodávaní softvérových riešení na podnikovej úrovni. S preukázateľnými výsledkami v medzinárodných projektoch a pre Fortune 500 spoločnosti prinášame odbornosť, spoľahlivosť a inovácie do každého projektu.",
         "about.attributes.title": "Profesionálne vlastnosti",
         "about.attributes.reliable": "Spoľahlivý",
         "about.attributes.motivated": "Samoštartovač",
@@ -112,10 +110,8 @@ const translations = {
         "about.attributes.innovative": "Inovatívny",
         "about.attributes.team": "Tímový hráč",
         "about.credentials.title": "Certifikáty a vzdelanie",
-        "about.credentials.cert1.name": "AWS Certified Cloud Practitioner",
-        "about.credentials.cert1.date": "(marec 2025)",
         "about.credentials.education1": "Inžiniersky titul",
-        "about.credentials.education1.school": "Žilinská univerzita, Fakulta riadenia a informatiky",
+        "about.credentials.education1.school": "Žilinská univerzita, Fakulta riadenia a informatiky (2011)",
         "about.credentials.cert2": "Microsoft ASP.NET Core MVC",
         "about.credentials.cert3": "Microsoft SQL optimalizácia výkonu",
         
