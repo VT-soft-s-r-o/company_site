@@ -8,12 +8,6 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Language Toggle -->
-    <div class="language-toggle">
-        <button class="lang-btn active" data-lang="en">EN</button>
-        <button class="lang-btn" data-lang="sk">SK</button>
-    </div>
-
     <!-- Header -->
     <header class="header">
         <div class="container">
@@ -27,6 +21,29 @@
                 <a href="#companies" data-i18n="nav.companies">Companies</a>
                 <a href="#contact" data-i18n="nav.contact">Contact</a>
             </nav>
+            <!-- Language Toggle -->
+            <div class="language-toggle" aria-label="Language selector">
+                <div class="lang-segmented" role="group" aria-label="Language">
+                    <button class="lang-btn active" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="sk">SK</button>
+                </div>
+                <div class="lang-dropdown">
+                    <button class="lang-current" aria-haspopup="listbox" aria-expanded="false" aria-controls="lang-menu">
+                        <svg class="icon-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"></path>
+                        </svg>
+                        <span class="current-label">EN</span>
+                        <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path d="M6 9l6 6 6-6"></path>
+                        </svg>
+                    </button>
+                    <ul id="lang-menu" class="lang-menu" role="listbox">
+                        <li role="option" tabindex="0" data-lang="en" aria-selected="true">English</li>
+                        <li role="option" tabindex="0" data-lang="sk" aria-selected="false">Slovak</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </header>
 

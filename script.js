@@ -191,7 +191,7 @@ document.addEventListener('DOMContentLoaded', function() {
         currentLang = savedLang;
     }
     
-    // Set up language toggle buttons
+    // Set up language toggle buttons (segmented control)
     const langButtons = document.querySelectorAll('.lang-btn');
     langButtons.forEach(btn => {
         btn.addEventListener('click', function() {
@@ -199,10 +199,68 @@ document.addEventListener('DOMContentLoaded', function() {
             switchLanguage(lang);
         });
     });
+
+    // Set up dropdown for mobile
+    const dropdown = document.querySelector('.lang-dropdown');
+    const currentBtn = document.querySelector('.lang-current');
+    const menu = document.getElementById('lang-menu');
+    const currentLabel = document.querySelector('.current-label');
+    const menuOptions = menu ? menu.querySelectorAll('[role="option"]') : [];
+
+    function closeDropdown() {
+        if (!dropdown) return;
+        dropdown.classList.remove('open');
+        if (currentBtn) currentBtn.setAttribute('aria-expanded', 'false');
+    }
+
+    function openDropdown() {
+        if (!dropdown) return;
+        dropdown.classList.add('open');
+        if (currentBtn) currentBtn.setAttribute('aria-expanded', 'true');
+        // Focus the selected option for accessibility
+        const selected = menu.querySelector('[aria-selected="true"]');
+        if (selected) selected.focus();
+    }
+
+    if (currentBtn && menu) {
+        currentBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (dropdown.classList.contains('open')) closeDropdown(); else openDropdown();
+        });
+
+        // Option selection
+        menuOptions.forEach(opt => {
+            opt.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const lang = opt.getAttribute('data-lang');
+                switchLanguage(lang);
+                closeDropdown();
+            });
+            opt.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    const lang = opt.getAttribute('data-lang');
+                    switchLanguage(lang);
+                    closeDropdown();
+                }
+            });
+        });
+
+        // Close on outside click
+        document.addEventListener('click', (e) => {
+            if (!dropdown.contains(e.target)) closeDropdown();
+        });
+
+        // Close on Escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeDropdown();
+        });
+    }
     
     // Apply initial language
     applyLanguage(currentLang);
     updateActiveButton(currentLang);
+    if (currentLabel) currentLabel.textContent = currentLang.toUpperCase();
     
     // Smooth scroll for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -256,6 +314,18 @@ function updateActiveButton(lang) {
             btn.classList.remove('active');
         }
     });
+
+    // Sync dropdown label and listbox selection
+    const currentLabel = document.querySelector('.current-label');
+    if (currentLabel) currentLabel.textContent = lang.toUpperCase();
+    const menu = document.getElementById('lang-menu');
+    if (menu) {
+        const options = menu.querySelectorAll('[role="option"]');
+        options.forEach(opt => {
+            const isSelected = opt.getAttribute('data-lang') === lang;
+            opt.setAttribute('aria-selected', isSelected ? 'true' : 'false');
+        });
+    }
 }
 
 // Add scroll animations
