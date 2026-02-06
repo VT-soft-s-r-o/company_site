@@ -181,11 +181,14 @@ const translations = {
 // Current language state
 let currentLang = 'en';
 
-// Get language from URL parameter
+// Get language from URL path
 function getLanguageFromURL() {
-    const params = new URLSearchParams(window.location.search);
-    const urlLang = params.get('lang');
-    return urlLang && translations[urlLang] ? urlLang : 'en';
+    const path = window.location.pathname;
+    // Check if path starts with /sk
+    if (path.startsWith('/sk')) {
+        return 'sk';
+    }
+    return 'en';
 }
 
 // Initialize on page load
@@ -208,7 +211,7 @@ document.addEventListener('DOMContentLoaded', function() {
         link.addEventListener('click', function(e) {
             e.preventDefault();
             const lang = this.getAttribute('data-lang');
-            const url = lang === 'en' ? '/' : '/?lang=' + lang;
+            const url = lang === 'en' ? '/' : '/' + lang;
             switchLanguage(lang, url);
         });
     });
